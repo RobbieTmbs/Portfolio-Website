@@ -1,38 +1,227 @@
-.App {
-  text-align: center;
+/* Navigation bar styles */
+.App-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #2d3a4b;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: #3a4a5d;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.2rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  cursor: pointer;
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-nav a:hover, .App-nav a:focus {
+  background: #61dafb;
+  color: #2d3a4b;
+  outline: none;
+}
+.project-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+  background: #e3eaf2;
+  flex-shrink: 0;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  padding-top: 100px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #2d3a4b;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+section {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  background: #f9fafc;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  padding: 2rem 1.5rem;
+}
+
+h2 {
+  color: #3a4a5d;
+  margin-bottom: 1rem;
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+}
+
+.project-item {
+  background: #e3eaf2;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2d3a4b;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, border 0.2s;
+  outline: none;
+  border: 2px solid transparent;
+  gap: 1rem;
+  min-height: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.project-item.selected {
+  border: 2px solid #ffb347;
+  background: #eaf6ff;
+}
+
+.project-item:hover, .project-item:focus {
+  background: #c7d6eb;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid #61dafb;
+}
+/* Contact section styles */
+#contact p {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+#contact a {
+  color: #2d3a4b;
+  text-decoration: underline;
+  margin-left: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  #contact p {
+    display: block;
+    margin-right: 0;
+  }
+}
+
+/* Experience section styles */
+#Experience {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #f3f7fa;
+  margin-bottom: 2rem;
+}
+.experience-entry {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.experience-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1.5rem;
+  background: #e3eaf2;
+}
+.experience-details {
+  flex: 1;
+}
+.experience-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.experience-points {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #3a4a5d;
+  text-align: left;
+}
+
+.project-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.project-title {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+}
+
+.project-desc {
+  color: #4a5a6a;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 2000;
 }
 
-.App-link {
-  color: #61dafb;
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  max-width: 400px;
+  width: 90vw;
+  position: relative;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
 }
