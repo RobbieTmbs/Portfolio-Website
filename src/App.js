@@ -71,7 +71,7 @@ new content and improvements based on player feedback</li>
                 >
                   <img className="project-img" src={proj.image} alt={proj.title + ' logo'} />
                   <span className="project-title">{proj.title}</span>
-                  <span className="project-desc">- {proj.desc}</span>
+                  <span className="project-desc">{proj.desc}</span>
                 </li>
               );
             })}

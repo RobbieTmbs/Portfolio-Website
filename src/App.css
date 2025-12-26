@@ -75,6 +75,11 @@ section {
   padding: 2rem 1.5rem;
 }
 
+/* Center the About section content */
+#about {
+  text-align: center;
+}
+
 h2 {
   color: #3a4a5d;
   margin-bottom: 1rem;
@@ -101,9 +106,9 @@ h2 {
   border: 2px solid transparent;
   gap: 1rem;
   min-height: 48px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* allow inner content (especially descriptions) to wrap */
+  white-space: normal;
+  overflow: visible;
 }
 .project-item.selected {
   border: 2px solid #ffb347;
@@ -186,8 +191,11 @@ h2 {
   color: #4a5a6a;
   flex: 1;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* allow description text to wrap instead of being truncated */
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* Modal styles */
